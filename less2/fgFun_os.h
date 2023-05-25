@@ -19,13 +19,11 @@ int fg_os(int n, char type) {
     switch (f->pc) {
       case 0: if(n <= 1) { sum++; goto(2); } break;
       case 1:
-        if(type == 'f') {
-          call(n - 1, type);
+        call(n - 1, type);
+        if(type == 'f') 
           call(n - 2, 'g');
-        } else {
-          call(n - 1, type);
+        else 
           call(n + 1, 'f');
-        }
         break;
       case 2: ret(); break;
       default: assert(0);

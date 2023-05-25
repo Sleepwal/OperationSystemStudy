@@ -4,6 +4,7 @@
 #include <cstdio>
 #include "fgFun.h"
 #include "fgFun_non_recursive.h"
+#include "fgFun_os.h"
 
 int main() {
     int n = 5;
@@ -14,7 +15,12 @@ int main() {
     fg_no_re(n, 'f');
     printf("f_no_re = %d, ", sum);
     fg_no_re(n, 'g');
-    printf("g_no_re = %d", sum);
+    printf("g_no_re = %d\n", sum);
+
+    int f_os_res = fg_os(n, 'f');
+    int g_os_res = fg_os(n, 'g');
+    printf("f_os_res = %d, ", f_os_res);
+    printf("g_os_res = %d\n", g_os_res);
 
     return 0;
 }

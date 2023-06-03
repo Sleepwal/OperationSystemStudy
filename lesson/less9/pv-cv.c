@@ -8,6 +8,7 @@ cond_t cv = COND_INIT(); //条件变量
 #define CAN_PRODUCE (count < n) //生产者，括号嵌套的深度不超过n
 #define CAN_CONSUME (count > 0) //消费者，有生产者资源才能消费
 
+// 被唤醒的时候，条件未必成立
 void Tproduce() {
     while(1) {
         mutex_lock(&lk);
